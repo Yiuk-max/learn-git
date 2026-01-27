@@ -8,6 +8,8 @@ void test_01(){
     std::cin>>value;
     if(value < 0){
         std::cerr<<"invalid value!"<<std::endl;
+        std::clog<<"test_01()=========="<<std::endl;
+        std::cin>>value;
         return;
     }
     //std::cerr<<"test_01()=========="<<std::endl;
@@ -15,6 +17,7 @@ void test_01(){
 }
 int main(){
     test_01();
+    system("pause");
 
     return 0;
 }
