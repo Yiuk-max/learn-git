@@ -15,9 +15,28 @@ void test_01(){
     //std::cerr<<"test_01()=========="<<std::endl;
 
 }
+void test_02(){
+    unsigned int value;
+    std::cout<<"please enter an unsigned integer:"<<std::endl;
+    std::cin>>value;
+    std::cout<<"you have entered:"<<value<<std::endl;
+}
+void test_03(){
+    unsigned int u=10,u2=42;
+    std::cout<<u2 - u<<std::endl;//32
+    std::cout<<u - u2<<std::endl;
+    int i=10,i2=42;
+    std::cout<<i2 - i<<std::endl;//32
+    std::cout<<i - i2<<std::endl;//-32
+    std::cout<<i - u<<std::endl;//0
+    std::cout<<u - i2<<std::endl;//4294967264
+    unsigned int u3=-1;
+    std::cout<<u3<<std::endl;//4294967295
+}
+//main function
 int main(){
-    test_01();
-    system("pause");
+    test_03();
+
 
     return 0;
 }
