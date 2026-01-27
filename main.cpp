@@ -1,0 +1,75 @@
+#include "head.hpp"
+//test functions
+
+//signed int input test
+void test_01(){
+    std::cout<<"please enter an integer:"<<std::endl;
+    int value;
+    std::cin>>value;
+    if(value < 0){
+        std::cerr<<"invalid value!"<<std::endl;
+        std::clog<<"test_01()=========="<<std::endl;
+        std::cin>>value;
+        return;
+    }
+    //std::cerr<<"test_01()=========="<<std::endl;
+
+}
+//unsigned int input test
+void test_02(){
+    unsigned int value;
+    std::cout<<"please enter an unsigned integer:"<<std::endl;
+    std::cin>>value;
+    std::cout<<"you have entered:"<<value<<std::endl;
+}
+//unsigned and signed int operation test
+void test_03(){
+    unsigned int u=10,u2=42;
+    std::cout<<u2 - u<<std::endl;//32
+    std::cout<<u - u2<<std::endl;
+    int i=10,i2=42;
+    std::cout<<i2 - i<<std::endl;//32
+    std::cout<<i - i2<<std::endl;//-32
+    std::cout<<i - u<<std::endl;//0
+    std::cout<<u - i2<<std::endl;//4294967264
+    unsigned int u3=-1;
+    std::cout<<u3<<std::endl;//4294967295
+}
+//constexpr test
+void test_04(){
+    constexpr double cm_per_inch=2.54;
+    double length=0;
+    std::cout<<"please enter a length in inches:"<<std::endl;
+    std::cin>>length;
+    std::cout<<length<<" inches = "<<cm_per_inch*length<<" centimeters."<<std::endl;
+
+}
+//namespace decltype test
+void test_05(){
+    int ci = 0,&cj = ci;
+    decltype(ci) x = 0;
+
+    decltype(cj) y = x;
+    y=42;
+    std::cout<<"ci="<<ci<<",cj="<<cj<<",x="<<x<<",y="<<y<<std::endl;//ci=42,cj=42,x=42,y=42
+}
+//namespace test
+void test_06(){
+    mynaspace::func();
+    mynaspace::mynasp2::func();
+    // using mynaspace::func;
+}
+
+//========================================================================
+int main(){
+    system("color 0D");
+    // test_01();
+    // test_02();
+    // test_03();
+    // test_04();
+    // test_05();
+    test_06();
+
+
+    return 0;
+}
