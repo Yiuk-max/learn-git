@@ -59,17 +59,69 @@ void test_06(){
     mynaspace::mynasp2::func();
     // using mynaspace::func;
 }
+void test_07(){
+    using std::string;
+    string s ;
+    std::cout<<"please enter a string:"<<std::endl;
+    getline(std::cin,s);
+    std::cout<<s<<std::endl;
+
+    if(s.empty()){
+        std::cerr<<"you entered an empty string!"<<std::endl;
+    }
+    
+}
+//exception test
+class DivideByZeroException : public std::exception {
+public:
+    std::string warning;
+    std::string info;
+    std::string getWarning() const {
+        return warning+": "+info;
+    }
+    DivideByZeroException(){};
+    DivideByZeroException(const std::string& warn,const std::string& inf) : warning(warn),info(inf){
+
+    };
+
+    const char* what() const noexcept override {
+        return  getWarning().c_str();
+    }
+};
+double divide(double a,double b){
+    if(b==0){
+        //throw std::runtime_error("division by zero!");
+        //throw std::runtime_error("Error: Division by zero");
+        throw DivideByZeroException("Error","Division by zero");
+    }
+    return a/b;
+}
+void test_08(){
+    int a=10;
+    int b=0;
+    try{
+        double c=divide(a,b);
+        std::cout<<"a/b="<<c<<std::endl;
+    }
+    catch(const DivideByZeroException &e){
+        std::cerr<<"Caught an exception: \x1b[31m"<<e.what()<<"\x1b[0m "<<std::endl;
+    }
+    catch(...){
+        std::cerr<<"Caught an unknown exception."<<std::endl;
+    }
+}
 
 //========================================================================
 int main(){
-    system("color 0D");
+    //system("color 0D");
     // test_01();
     // test_02();
     // test_03();
     // test_04();
     // test_05();
-    test_06();
-
+    // test_06();
+    // test_07();
+    test_08();
 
     return 0;
 }

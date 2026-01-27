@@ -1,4 +1,5 @@
 #include  <iostream>
+#include <string>
 namespace mynaspace {
     void func() {
         std::cout << "Hello from mynamespace!" << std::endl;
