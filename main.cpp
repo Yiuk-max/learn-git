@@ -53,7 +53,7 @@ void test_05(){
     y=42;
     std::cout<<"ci="<<ci<<",cj="<<cj<<",x="<<x<<",y="<<y<<std::endl;//ci=42,cj=42,x=42,y=42
 }
-//namespace test
+//namespace test======================================================
 void test_06(){
     mynaspace::func();
     mynaspace::mynasp2::func();
@@ -107,11 +107,14 @@ void test_08(){
         std::cerr<<"Caught an exception: \x1b[31m"<<e.what()<<"\x1b[0m "<<std::endl;
     }
     catch(...){
-        std::cerr<<"Caught an unknown exception."<<std::endl;
+        throw; 
     }
 }
+//==========================================================================
 
-//========================================================================
+
+//==============================main========================================
+
 int main(){
     //system("color 0D");
     // test_01();
