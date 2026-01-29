@@ -146,3 +146,7 @@ int main(){
 }
 //瞎写 用于研究 git
 //git test 1234567890
+//git test abcdefghijklmnopqrstuvwxyz
+//git test ABCDEFGHIJKLMNOPQRSTUVWXYZ   
+//git test !@#$%^&*()_+-=~`[]{}|\;:'",.<>/?
+//git test yggwiuehfiujdhfiyquhsjhiu
