@@ -1,4 +1,4 @@
-#include "head.hpp"
+#include "main.hpp"
 //test functions
 
 //signed int input test
@@ -111,8 +111,15 @@ void test_08(){
     }
 }
 //==========================================================================
+std::string &test_09(){
+    static std::string str="Hello, World!";
+    return str;
+}
 
+std::vector<std::string> test_10(){
+    return {"one","two","three"};
 
+}
 //==============================main========================================
 
 int main(){
@@ -124,7 +131,16 @@ int main(){
     // test_05();
     // test_06();
     // test_07();
-    test_08();
+    // test_08();
 
-    return 0;
+    // std::string ref=test_09();
+    // std::cout<<"ref="<<ref<<std::endl;//ref=42 but ref
+
+    std::vector<std::string> vec=test_10();
+    for(const auto &s : vec){
+        std::cout<<s<<" ";
+    }
+    std::cout<<std::endl;
+    std::cin.get();
+    return EXIT_SUCCESS;
 }

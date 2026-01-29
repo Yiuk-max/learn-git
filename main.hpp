@@ -1,5 +1,12 @@
-#include  <iostream>
+#include <iostream>
 #include <string>
+#include <vector>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+using std::string;
 namespace mynaspace {
     void func() {
         std::cout << "Hello from mynamespace!" << std::endl;
