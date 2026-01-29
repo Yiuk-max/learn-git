@@ -120,6 +120,21 @@ std::vector<std::string> test_10(){
     return {"one","two","three"};
 
 }
+//函数指针
+int add(int x,int y){
+    return x+y;
+}
+int sub(int x,int y){
+    return x-y;
+}
+std::vector<int(*)(int, int)> vecptr;
+void test_11(){
+    vecptr.push_back(add);
+    vecptr.push_back(sub);
+    for(const auto &func : vecptr){
+        std::cout<<func(10,5)<<std::endl;
+    }
+}
 //==============================main========================================
 
 int main(){
@@ -136,11 +151,13 @@ int main(){
     // std::string ref=test_09();
     // std::cout<<"ref="<<ref<<std::endl;//ref=42 but ref
 
-    std::vector<std::string> vec=test_10();
-    for(const auto &s : vec){
-        std::cout<<s<<" ";
-    }
-    std::cout<<std::endl;
+    // std::vector<std::string> vec=test_10();
+    // for(const auto &s : vec){
+    //     std::cout<<s<<" ";
+    // }
+    // std::cout<<std::endl;
+
+    test_11();
     std::cin.get();
     return EXIT_SUCCESS;
 }
