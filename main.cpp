@@ -135,6 +135,13 @@ void test_11(){
         std::cout<<func(10,5)<<std::endl;
     }
 }
+void test_13(){
+    std::vector<std::string> vec={"apple","banana","cherry"};
+    for(const auto &s : vec){
+        std::cout<<s<<" ";
+    }
+    std::cout<<std::endl;
+}
 //==============================main========================================
 
 int main(){
